@@ -171,10 +171,10 @@
         'https://konvajs.org/assets/darth-vader.jpg',
         (img) => {
           img.setAttrs({
-            width: 300,
+            width: 200,
             height: 100,
-            x: 80,
-            y: 100,
+            x: 50,
+            y: 50,
             name: 'image',
             draggable: true,
           });
@@ -248,7 +248,7 @@
             width: 300,
             height: 100,
             x: 0,
-            y: 200,
+            y: 300,
             name: 'image2',
             draggable: true,
           });
@@ -260,18 +260,6 @@
 
           img.on('transform', () => {
             // reset scale on transform
-            const tr = new Konva.Transformer({
-            nodes: [img],
-            keepRatio: false,
-            boundBoxFunc: (oldBox, newBox) => {
-              if (newBox.width < 10 || newBox.height < 10) {
-                return oldBox;
-              }
-              return newBox;
-            },
-          });
-
-          textLayer.add(tr);
 
             img.setAttrs({
               scaleX: 1,
